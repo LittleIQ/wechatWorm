@@ -1,0 +1,15 @@
+{
+  "name": "wechatworm",
+  "version": "1.0.0",
+  "description": "A internet-worm for wechat's article.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "milkiq",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.85.0"
+  }
+}
