@@ -40,10 +40,10 @@ function look_wechat_by_url(url) {
     console.log(article_titles);
     let data = '';
     for(let i in article_pub_times){
-        data += '<li><a href="'+article_urls[i]+'">'+article_titles[i]+' : '+article_pub_times[i]+'</a></li>';
+        data += '<item><title>'+article_titles[i]+'</title><link>'+article_urls[i]+'</link><description>'+article_pub_times[i]+'</description></item>';
     }
-    data = '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body><ul>'+data+'</ul></body></html>';
-    fs.writeFile('./test.html', data, {
+    data = '<?xml version="1.0" encoding="gb2312"?><rss version="2.0"><channel><title>魔宙</title><link>https://tranquil-journey-94620.herokuapp.com/</link><description>wechat</description>'+data+'</channel></rss>';
+    fs.writeFile('./test.xml', data, {
       flag: 'w',
       encoding: 'utf-8',
       mode: '0666'
