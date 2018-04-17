@@ -93,3 +93,11 @@ function findArticle(html, article_pub_times, article_titles, article_urls) {
 getNewsList('魔宙');
 
 app.use(express.static('./'));
+
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
