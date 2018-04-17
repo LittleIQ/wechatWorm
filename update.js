@@ -75,14 +75,14 @@ function findArticle(html, article_pub_times, article_titles, article_urls) {
     var article_first = msg.app_msg_ext_info;
     article_pub_times.push(article_pub_time);
     article_titles.push(article_first.title);
-    article_urls.push('http://mp.weixin.qq.com' + article_first.content_url.replace(/(amp;)|(\\)/g, ''));
+    article_urls.push('http://mp.weixin.qq.com' + article_first.content_url);
     if (article_first.multi_app_msg_item_list.length > 0) {
       //其他文章
       var article_others = article_first.multi_app_msg_item_list;
       article_others.forEach(function(article_other, index) {
         article_pub_times.push(article_pub_time);
         article_titles.push(article_other.title);
-        article_urls.push('http://mp.weixin.qq.com' + article_other.content_url.replace(/(amp;)|(\\)/g, ''));
+        article_urls.push('http://mp.weixin.qq.com' + article_other.content_url);
       })
     }
   })
