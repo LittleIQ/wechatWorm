@@ -1,5 +1,6 @@
 var request = require('request');
 var cheerio = require('cheerio');
+var async = require('async');
 var Ut = {};
 
 Ut.solve_verifycode = function(html, url, callback) {
@@ -84,7 +85,8 @@ Ut.solve_verifycode = function(html, url, callback) {
   })
   async.waterfall(task_code, function(err, result) {
     if (err) return callback(err, null);
-    callback(null, result);
+    // callback(null, result);
+    console.log(result);
   })
 };
 
